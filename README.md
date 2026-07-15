@@ -24,7 +24,7 @@ A RESTful ASP.NET Core Web API for managing research projects.
 - Health-check endpoint
 - AWS cloud deployment
 
-- <img width="744" height="242" alt="Application Environment" src="https://github.com/user-attachments/assets/7a0ad7d5-8c7e-48c3-a3fb-ec9910d974ec" />
+<img width="744" height="242" alt="Application Environment" src="https://github.com/user-attachments/assets/7a0ad7d5-8c7e-48c3-a3fb-ec9910d974ec" />
 
 ## Architecture
 
@@ -54,14 +54,30 @@ SQL Server / Amazon RDS
 - `GET /health`
 
 <img width="929" height="408" alt="Command" src="https://github.com/user-attachments/assets/818cefc3-8315-43eb-b446-8a32d012e1a3" />
-
 ## Running Locally
 
-1. Install the .NET SDK and SQL Server LocalDB.
-2. Update the database:
+### Prerequisites
+
+- .NET 10 SDK
+- Visual Studio 2026 with the ASP.NET and web development workload
+
+### Setup
+
+1. Clone the repository
+2. Open a PowerShell terminal in the project directory.
+3. Run the following commands:
 
    ```bash
+   dotnet restore
+   dotnet tool install --global dotnet-ef
    dotnet ef database update
-3. Open Swagger using the local URL shown in the terminal: https://localhost:<port>/swagger
+   dotnet run
+   ```
+   
+4. Open Swagger using the local URL displayed in the terminal, for example:
+
+```text
+https://localhost:<port>/swagger
+```
 
    <img width="670" height="343" alt="Database" src="https://github.com/user-attachments/assets/192b15fa-8af4-4ad0-9e4f-00164c2afdf5" />
